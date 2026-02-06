@@ -1,0 +1,102 @@
+## Interface: 20504
+## Title: Bank Alone Guides
+## Notes: Premium SCS-branded leveling and profession guides for Burning Crusade Classic Anniversary.
+## Author: Bradley S. Scott
+## Version: 1.0.0
+## SavedVariables: BAG_SavedVars
+## SavedVariablesPerCharacter: BAG_CharVars
+## DefaultState: enabled
+## X-Category: Questing
+## X-Website: https://bankalone.gg
+## X-Feedback: https://bankalone.gg/support
+
+# Branding
+Branding\Theme.lua
+Branding\Layout.lua
+Branding\Logo.lua
+
+# Core System
+Core\Init.lua
+Core\Utils.lua
+Core\SavedVars.lua
+Core\Conditions.lua
+Core\Events.lua
+Core\Engine.lua
+
+# API Layer
+API\PlayerAPI.lua
+API\QuestAPI.lua
+API\InventoryAPI.lua
+API\SpellAPI.lua
+API\MapAPI.lua
+
+# Data Layer
+Data\Zones.lua
+Data\Items.lua
+Data\NPCs.lua
+Data\Quests.lua
+Data\Trainers.lua
+Data\Vendors.lua
+
+# Navigation
+Navigation\ZoneDetection.lua
+Navigation\QuestTracking.lua
+Navigation\Travel.lua
+Navigation\Navigator.lua
+
+# UI System
+UI\UI_Styles.lua
+UI\UI_Core.lua
+UI\UI_MainFrame.lua
+UI\UI_StepPanel.lua
+UI\UI_Buttons.lua
+UI\UI_Animations.lua
+
+# Guide System
+Guides\Parser.lua
+
+# Leveling Guides - Alliance
+Guides\Leveling\Alliance\Human_1_10.lua
+Guides\Leveling\Alliance\Dwarf_1_10.lua
+Guides\Leveling\Alliance\NightElf_1_10.lua
+Guides\Leveling\Alliance\Gnome_1_10.lua
+Guides\Leveling\Alliance\Draenei_1_10.lua
+Guides\Leveling\Alliance\Alliance_10_20.lua
+Guides\Leveling\Alliance\Alliance_20_30.lua
+Guides\Leveling\Alliance\Alliance_30_40.lua
+Guides\Leveling\Alliance\Alliance_40_50.lua
+Guides\Leveling\Alliance\Alliance_50_58.lua
+Guides\Leveling\Alliance\Alliance_58_70.lua
+
+# Leveling Guides - Horde
+Guides\Leveling\Horde\Orc_1_10.lua
+Guides\Leveling\Horde\Troll_1_10.lua
+Guides\Leveling\Horde\Tauren_1_10.lua
+Guides\Leveling\Horde\Undead_1_10.lua
+Guides\Leveling\Horde\BloodElf_1_10.lua
+Guides\Leveling\Horde\Horde_10_20.lua
+Guides\Leveling\Horde\Horde_20_30.lua
+Guides\Leveling\Horde\Horde_30_40.lua
+Guides\Leveling\Horde\Horde_40_50.lua
+Guides\Leveling\Horde\Horde_50_58.lua
+Guides\Leveling\Horde\Horde_58_70.lua
+
+# Profession Guides
+Guides\Professions\Mining.lua
+Guides\Professions\Herbalism.lua
+Guides\Professions\Skinning.lua
+Guides\Professions\Blacksmithing.lua
+Guides\Professions\Engineering.lua
+Guides\Professions\Leatherworking.lua
+Guides\Professions\Tailoring.lua
+Guides\Professions\Enchanting.lua
+Guides\Professions\Alchemy.lua
+Guides\Professions\Cooking.lua
+Guides\Professions\Fishing.lua
+Guides\Professions\FirstAid.lua
+
+# Gold Guides
+Guides\Gold\Farming.lua
+Guides\Gold\Professions.lua
+Guides\Gold\Dungeons.lua
+Guides\Gold\Dailies.lua
