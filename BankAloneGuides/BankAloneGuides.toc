@@ -1,0 +1,125 @@
+## Interface: 20504
+## Title: Bank Alone Guides
+## Notes: Premium SCS-branded leveling and profession guides for Burning Crusade Classic Anniversary. Type /bag for options.
+## Author: Bradley S. Scott
+## Version: 1.0
+## SavedVariables: BAG_SavedVars
+## DefaultState: enabled
+## X-Website: https://bankaloneguides.com
+## X-Category: Quests & Leveling
+
+# ============================================================
+# Core - Must load first
+# ============================================================
+Core\Init.lua
+Core\Utils.lua
+Core\SavedVars.lua
+Core\Conditions.lua
+Core\Engine.lua
+Core\Events.lua
+
+# ============================================================
+# API Layer
+# ============================================================
+API\QuestAPI.lua
+API\PlayerAPI.lua
+API\InventoryAPI.lua
+API\SpellAPI.lua
+API\MapAPI.lua
+
+# ============================================================
+# Navigation
+# ============================================================
+Navigation\ZoneDetection.lua
+Navigation\Navigator.lua
+Navigation\QuestTracking.lua
+Navigation\Travel.lua
+
+# ============================================================
+# Data Layer
+# ============================================================
+Data\Zones.lua
+Data\NPCs.lua
+Data\Quests.lua
+Data\Items.lua
+Data\Trainers.lua
+Data\Vendors.lua
+
+# ============================================================
+# Branding
+# ============================================================
+Branding\Theme.lua
+Branding\Layout.lua
+Branding\Logo.lua
+
+# ============================================================
+# UI System
+# ============================================================
+UI\UI_Styles.lua
+UI\UI_Animations.lua
+UI\UI_Core.lua
+UI\UI_MainFrame.lua
+UI\UI_StepPanel.lua
+UI\UI_Buttons.lua
+
+# ============================================================
+# Guide Parser
+# ============================================================
+Guides\Parser.lua
+
+# ============================================================
+# Leveling Guides - Alliance
+# ============================================================
+Guides\Leveling\Alliance\Alliance_0110_Elwynn.lua
+Guides\Leveling\Alliance\Alliance_0110_DunMorogh.lua
+Guides\Leveling\Alliance\Alliance_0110_Teldrassil.lua
+Guides\Leveling\Alliance\Alliance_0110_AzuremystIsle.lua
+Guides\Leveling\Alliance\Alliance_1020.lua
+Guides\Leveling\Alliance\Alliance_2030.lua
+Guides\Leveling\Alliance\Alliance_3040.lua
+Guides\Leveling\Alliance\Alliance_4050.lua
+Guides\Leveling\Alliance\Alliance_5058.lua
+Guides\Leveling\Alliance\Alliance_5860_Hellfire.lua
+Guides\Leveling\Alliance\Alliance_6062_Zangarmarsh.lua
+Guides\Leveling\Alliance\Alliance_6264_Terokkar.lua
+Guides\Leveling\Alliance\Alliance_6466_BladesEdge.lua
+Guides\Leveling\Alliance\Alliance_6670_Netherstorm.lua
+
+# ============================================================
+# Leveling Guides - Horde
+# ============================================================
+Guides\Leveling\Horde\Horde_0110_Durotar.lua
+Guides\Leveling\Horde\Horde_0110_Mulgore.lua
+Guides\Leveling\Horde\Horde_0110_TirisfalGlades.lua
+Guides\Leveling\Horde\Horde_0110_EversongWoods.lua
+Guides\Leveling\Horde\Horde_1020.lua
+Guides\Leveling\Horde\Horde_2030.lua
+Guides\Leveling\Horde\Horde_3040.lua
+Guides\Leveling\Horde\Horde_4050.lua
+Guides\Leveling\Horde\Horde_5058.lua
+Guides\Leveling\Horde\Horde_5860_Hellfire.lua
+Guides\Leveling\Horde\Horde_6062_Zangarmarsh.lua
+Guides\Leveling\Horde\Horde_6264_Terokkar.lua
+Guides\Leveling\Horde\Horde_6466_BladesEdge.lua
+Guides\Leveling\Horde\Horde_6670_Netherstorm.lua
+
+# ============================================================
+# Profession Guides
+# ============================================================
+Guides\Professions\Mining.lua
+Guides\Professions\Herbalism.lua
+Guides\Professions\Skinning.lua
+Guides\Professions\Alchemy.lua
+Guides\Professions\Blacksmithing.lua
+Guides\Professions\Engineering.lua
+Guides\Professions\Leatherworking.lua
+Guides\Professions\Tailoring.lua
+Guides\Professions\Enchanting.lua
+Guides\Professions\Cooking.lua
+Guides\Professions\Fishing.lua
+Guides\Professions\FirstAid.lua
+
+# ============================================================
+# Gold Guides
+# ============================================================
+Guides\Gold\GoldGuide.lua
