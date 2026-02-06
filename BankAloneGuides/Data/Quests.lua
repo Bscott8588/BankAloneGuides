@@ -1,0 +1,22 @@
+local BAG = BankAlone
+BAG.Data.Quests = {
+  [783] = { name = "Ridge Scout Sweep", summary = "Thin out the prowling scouts along the ridge.", levelRange = { 5, 7 }, prereq = {}, followups = { 7 } },
+  [7] = { name = "Kobold Candle Run", summary = "Gather candles from the miners for a safe patrol.", levelRange = { 5, 8 }, prereq = { 783 }, followups = {} },
+  [18] = { name = "Brotherhood Watch", summary = "Track the thieves camped by the forest edge.", levelRange = { 10, 12 }, prereq = {}, followups = {} },
+  [54] = { name = "Redridge Recruits", summary = "Report to the watchtower and take local assignments.", levelRange = { 15, 17 }, prereq = {}, followups = { 62 } },
+  [62] = { name = "Guarded Supply Lines", summary = "Secure the bridge routes for the militia.", levelRange = { 16, 18 }, prereq = { 54 }, followups = {} },
+  [155] = { name = "The Eye of the Swamp", summary = "Recover a strange lens hidden near the marsh.", levelRange = { 18, 20 }, prereq = {}, followups = {} },
+  [583] = { name = "The Hill Farmstead", summary = "Clear threats around the farm buildings.", levelRange = { 18, 20 }, prereq = {}, followups = {} },
+  [203] = { name = "Agamand Looms", summary = "Collect weaving tools from the haunted farm.", levelRange = { 7, 10 }, prereq = {}, followups = {} },
+  [365] = { name = "Fields of Grief", summary = "Survey the graveyard for rogue undead.", levelRange = { 4, 6 }, prereq = {}, followups = {} },
+  [805] = { name = "Darkshore Route", summary = "Scout the coast road and report threats.", levelRange = { 10, 12 }, prereq = {}, followups = {} },
+  [9463] = { name = "Medical Recovery", summary = "Collect supplies for the injured survivors.", levelRange = { 6, 8 }, prereq = {}, followups = {} },
+  [9675] = { name = "Wild Growth Study", summary = "Gather plant samples from the isle.", levelRange = { 8, 10 }, prereq = {}, followups = {} },
+  [8262] = { name = "The Barrens Hunt", summary = "Thin the beasts for the camp's cookfires.", levelRange = { 10, 13 }, prereq = {}, followups = {} },
+  [871] = { name = "Defenders of the Barrens", summary = "Push back raiders threatening the road.", levelRange = { 14, 17 }, prereq = {}, followups = {} },
+  [10120] = { name = "Arrival in Hellfire", summary = "Check in with the front commander.", levelRange = { 58, 60 }, prereq = {}, followups = {} },
+  [10121] = { name = "Through the Portal", summary = "Secure the immediate perimeter beyond the gate.", levelRange = { 58, 60 }, prereq = { 10120 }, followups = {} },
+  [9785] = { name = "Coilfang Scan", summary = "Collect data from the wetlands channel.", levelRange = { 61, 63 }, prereq = {}, followups = {} },
+  [10847] = { name = "Veil of Shadows", summary = "Check the hidden camps for activity.", levelRange = { 65, 66 }, prereq = {}, followups = {} },
+  [10668] = { name = "Against the Legion", summary = "Strike down small patrols across the wastes.", levelRange = { 67, 68 }, prereq = {}, followups = {} },
+}
