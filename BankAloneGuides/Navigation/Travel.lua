@@ -9,7 +9,7 @@ BAG.Travel = BAG.Travel or {}
 
 -- ── Travel step types and their display info ──────────────────────────────
 BAG.Travel.StepTypes = {
-    goto      = { label = "Go to",          icon = "travel",   verb = "Travel to" },
+    ["goto"]  = { label = "Go to",          icon = "travel",   verb = "Travel to" },
     fly       = { label = "Fly to",         icon = "fly",      verb = "Take a flight to" },
     fp        = { label = "Get Flight Path", icon = "fp",      verb = "Discover the flight path at" },
     hs        = { label = "Hearthstone",    icon = "hearth",   verb = "Use your Hearthstone to return to" },
