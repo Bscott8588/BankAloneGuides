@@ -1,0 +1,114 @@
+## Interface: 20504
+## Title: Bank Alone Guides
+## Notes: Premium SCS-branded leveling and profession guides for Burning Crusade Classic Anniversary. Original routing for 1-70 Alliance & Horde.
+## Author: Bradley S. Scott
+## Version: 1.0
+## SavedVariables: BAG_SavedVars
+## DefaultState: enabled
+
+# ─── Branding ───────────────────────────────────────
+Branding\Theme.lua
+Branding\Layout.lua
+Branding\Logo.lua
+
+# ─── Core ───────────────────────────────────────────
+Core\Init.lua
+Core\Utils.lua
+Core\SavedVars.lua
+Core\Conditions.lua
+Core\Engine.lua
+Core\Events.lua
+
+# ─── API Layer ──────────────────────────────────────
+API\QuestAPI.lua
+API\PlayerAPI.lua
+API\InventoryAPI.lua
+API\SpellAPI.lua
+API\MapAPI.lua
+
+# ─── Data Layer ─────────────────────────────────────
+Data\Zones.lua
+Data\NPCs.lua
+Data\Quests.lua
+Data\Items.lua
+Data\Trainers.lua
+Data\Vendors.lua
+
+# ─── Navigation ─────────────────────────────────────
+Navigation\ZoneDetection.lua
+Navigation\QuestTracking.lua
+Navigation\Travel.lua
+Navigation\Navigator.lua
+
+# ─── UI System ──────────────────────────────────────
+UI\UI_Styles.lua
+UI\UI_Animations.lua
+UI\UI_Core.lua
+UI\UI_MainFrame.lua
+UI\UI_StepPanel.lua
+UI\UI_Buttons.lua
+
+# ─── Guide Parser ───────────────────────────────────
+Guides\Parser.lua
+
+# ─── Alliance Leveling Guides ───────────────────────
+Guides\Leveling\Alliance\Alliance_01_10_Elwynn.lua
+Guides\Leveling\Alliance\Alliance_01_10_Dun_Morogh.lua
+Guides\Leveling\Alliance\Alliance_01_10_Teldrassil.lua
+Guides\Leveling\Alliance\Alliance_01_10_Azuremyst.lua
+Guides\Leveling\Alliance\Alliance_10_20_Westfall.lua
+Guides\Leveling\Alliance\Alliance_10_20_Loch_Modan.lua
+Guides\Leveling\Alliance\Alliance_10_20_Darkshore.lua
+Guides\Leveling\Alliance\Alliance_20_30_Redridge_Duskwood.lua
+Guides\Leveling\Alliance\Alliance_30_40_STV_Desolace.lua
+Guides\Leveling\Alliance\Alliance_40_50_Tanaris_Hinterlands.lua
+Guides\Leveling\Alliance\Alliance_50_58_UnGoro_WPL_EPL.lua
+Guides\Leveling\Alliance\Alliance_58_60_Hellfire.lua
+Guides\Leveling\Alliance\Alliance_60_62_Hellfire.lua
+Guides\Leveling\Alliance\Alliance_62_64_Zangarmarsh.lua
+Guides\Leveling\Alliance\Alliance_64_65_Terokkar.lua
+Guides\Leveling\Alliance\Alliance_65_67_Nagrand.lua
+Guides\Leveling\Alliance\Alliance_67_68_BladeEdge.lua
+Guides\Leveling\Alliance\Alliance_68_69_Netherstorm.lua
+Guides\Leveling\Alliance\Alliance_69_70_Shadowmoon.lua
+
+# ─── Horde Leveling Guides ─────────────────────────
+Guides\Leveling\Horde\Horde_01_10_Durotar.lua
+Guides\Leveling\Horde\Horde_01_10_Tirisfal.lua
+Guides\Leveling\Horde\Horde_01_10_Mulgore.lua
+Guides\Leveling\Horde\Horde_01_10_Eversong.lua
+Guides\Leveling\Horde\Horde_10_20_Barrens.lua
+Guides\Leveling\Horde\Horde_10_20_Silverpine.lua
+Guides\Leveling\Horde\Horde_10_20_Ghostlands.lua
+Guides\Leveling\Horde\Horde_20_30_Stonetalon_Ashenvale.lua
+Guides\Leveling\Horde\Horde_30_40_STV_Arathi.lua
+Guides\Leveling\Horde\Horde_40_50_Tanaris_Hinterlands.lua
+Guides\Leveling\Horde\Horde_50_58_UnGoro_WPL_EPL.lua
+Guides\Leveling\Horde\Horde_58_60_Hellfire.lua
+Guides\Leveling\Horde\Horde_60_62_Hellfire.lua
+Guides\Leveling\Horde\Horde_62_64_Zangarmarsh.lua
+Guides\Leveling\Horde\Horde_64_65_Terokkar.lua
+Guides\Leveling\Horde\Horde_65_67_Nagrand.lua
+Guides\Leveling\Horde\Horde_67_68_BladeEdge.lua
+Guides\Leveling\Horde\Horde_68_69_Netherstorm.lua
+Guides\Leveling\Horde\Horde_69_70_Shadowmoon.lua
+
+# ─── Profession Guides ──────────────────────────────
+Guides\Professions\Prof_Mining.lua
+Guides\Professions\Prof_Herbalism.lua
+Guides\Professions\Prof_Skinning.lua
+Guides\Professions\Prof_Blacksmithing.lua
+Guides\Professions\Prof_Engineering.lua
+Guides\Professions\Prof_Leatherworking.lua
+Guides\Professions\Prof_Tailoring.lua
+Guides\Professions\Prof_Enchanting.lua
+Guides\Professions\Prof_Alchemy.lua
+Guides\Professions\Prof_Cooking.lua
+Guides\Professions\Prof_Fishing.lua
+Guides\Professions\Prof_FirstAid.lua
+
+# ─── Gold Guides ────────────────────────────────────
+Guides\Gold\Gold_Farming.lua
+Guides\Gold\Gold_Professions.lua
+Guides\Gold\Gold_Dungeons.lua
+Guides\Gold\Gold_Dailies.lua
