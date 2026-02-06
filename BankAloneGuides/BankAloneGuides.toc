@@ -1,0 +1,86 @@
+## Interface: 20504
+## Title: Bank Alone Guides
+## Notes: Premium SCS-branded leveling and profession guides for Burning Crusade Classic Anniversary.
+## Author: Bradley S. Scott
+## Version: 1.0
+## SavedVariables: BAG_SavedVars
+## SavedVariablesPerCharacter: BAG_CharVars
+## X-Category: Questing
+## X-Website: https://scs-gaming.com
+## X-License: All Rights Reserved
+
+# Branding Layer
+Branding\Theme.lua
+Branding\Layout.lua
+Branding\Logo.lua
+
+# Core Systems
+Core\Init.lua
+Core\Utils.lua
+Core\SavedVars.lua
+Core\Conditions.lua
+Core\Events.lua
+Core\Engine.lua
+
+# API Layer
+API\QuestAPI.lua
+API\PlayerAPI.lua
+API\InventoryAPI.lua
+API\SpellAPI.lua
+API\MapAPI.lua
+
+# Data Layer
+Data\Zones.lua
+Data\Items.lua
+Data\NPCs.lua
+Data\Quests.lua
+Data\Trainers.lua
+Data\Vendors.lua
+
+# UI System
+UI\UI_Styles.lua
+UI\UI_Core.lua
+UI\UI_MainFrame.lua
+UI\UI_StepPanel.lua
+UI\UI_Buttons.lua
+UI\UI_Animations.lua
+
+# Navigation System
+Navigation\ZoneDetection.lua
+Navigation\QuestTracking.lua
+Navigation\Travel.lua
+Navigation\Navigator.lua
+
+# Guide System
+Guides\Parser.lua
+Guides\Leveling\Alliance\StartingZones.lua
+Guides\Leveling\Alliance\Alliance_01_10.lua
+Guides\Leveling\Alliance\Alliance_10_20.lua
+Guides\Leveling\Alliance\Alliance_20_30.lua
+Guides\Leveling\Alliance\Alliance_30_40.lua
+Guides\Leveling\Alliance\Alliance_40_50.lua
+Guides\Leveling\Alliance\Alliance_50_60.lua
+Guides\Leveling\Alliance\Alliance_58_70_Outland.lua
+Guides\Leveling\Horde\StartingZones.lua
+Guides\Leveling\Horde\Horde_01_10.lua
+Guides\Leveling\Horde\Horde_10_20.lua
+Guides\Leveling\Horde\Horde_20_30.lua
+Guides\Leveling\Horde\Horde_30_40.lua
+Guides\Leveling\Horde\Horde_40_50.lua
+Guides\Leveling\Horde\Horde_50_60.lua
+Guides\Leveling\Horde\Horde_58_70_Outland.lua
+Guides\Professions\Mining.lua
+Guides\Professions\Herbalism.lua
+Guides\Professions\Skinning.lua
+Guides\Professions\Blacksmithing.lua
+Guides\Professions\Engineering.lua
+Guides\Professions\Leatherworking.lua
+Guides\Professions\Tailoring.lua
+Guides\Professions\Enchanting.lua
+Guides\Professions\Alchemy.lua
+Guides\Professions\Cooking.lua
+Guides\Professions\Fishing.lua
+Guides\Professions\FirstAid.lua
+Guides\Gold\Farming.lua
+Guides\Gold\Professions.lua
+Guides\Gold\Dungeons.lua
