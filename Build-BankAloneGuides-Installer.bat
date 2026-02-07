@@ -5,6 +5,7 @@ set "ROOT=%~dp0"
 set "SED_TEMPLATE=%ROOT%BankAloneGuides-Installer.sed"
 set "SED_OUT=%TEMP%\BankAloneGuides-Installer.gen.sed"
 set "TARGET=%ROOT%BankAloneGuides-Setup.exe"
+set "IEXPRESS=%SystemRoot%\System32\iexpress.exe"
 
 if not exist "%SED_TEMPLATE%" (
   echo [BAG] Missing SED template: %SED_TEMPLATE%
@@ -18,9 +19,15 @@ if not exist "%ROOT%Install-BankAloneGuides.ps1" (
   exit /b 1
 )
 
+if not exist "%IEXPRESS%" (
+  echo [BAG] IExpress not found at %IEXPRESS%
+  pause
+  exit /b 1
+)
+
 powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-  "$root = '%ROOT%';" ^
-  "$target = '%TARGET%';" ^
+  "$root = '%ROOT%'.TrimEnd('\');" ^
+  "$target = Join-Path $root 'BankAloneGuides-Setup.exe';" ^
   "$sed = Get-Content -Raw '%SED_TEMPLATE%';" ^
   "$sed = $sed.Replace('__SOURCE_PATH__', $root).Replace('__TARGET_NAME__', $target);" ^
   "[System.IO.File]::WriteAllText('%SED_OUT%', $sed, [System.Text.Encoding]::ASCII);"
@@ -32,14 +39,13 @@ if not exist "%SED_OUT%" (
 )
 
 echo [BAG] Building EXE with IExpress...
-iexpress /N /Q "%SED_OUT%"
-
-if exist "%SED_OUT%" del "%SED_OUT%"
+""%IEXPRESS%"" /N /Q "%SED_OUT%"
 
 if exist "%TARGET%" (
+  if exist "%SED_OUT%" del "%SED_OUT%"
   echo [BAG] Build complete: %TARGET%
 ) else (
-  echo [BAG] Build failed. Check IExpress output.
+  echo [BAG] Build failed. Keeping SED for inspection: %SED_OUT%
 )
 
 pause

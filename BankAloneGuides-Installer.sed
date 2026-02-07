@@ -14,7 +14,7 @@ RebootMode=N
 InstallPrompt=
 DisplayLicense=
 FinishMessage=Bank Alone Guides install complete.
-TargetName=__TARGET_NAME__
+TargetName="__TARGET_NAME__"
 FriendlyName=Bank Alone Guides Installer
 AppLaunched=cmd /c powershell -ExecutionPolicy Bypass -File Install-BankAloneGuides.ps1
 PostInstallCmd=<None>
@@ -23,7 +23,7 @@ UserQuietInstCmd=
 SourceFiles=SourceFiles0
 
 [SourceFiles]
-SourceFiles0=__SOURCE_PATH__
+SourceFiles0="__SOURCE_PATH__"
 
 [SourceFiles0]
 FILE0=Install-BankAloneGuides.ps1
