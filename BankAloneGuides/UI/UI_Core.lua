@@ -16,11 +16,20 @@ function UI:Initialize()
   if self.Buttons and self.Buttons.Initialize and self.mainFrame then
     self.Buttons:Initialize(self.mainFrame)
   end
+  if self.Options and self.Options.Initialize and self.mainFrame then
+    self.Options:Initialize(self.mainFrame)
+  end
+  if self.Navigation and self.Navigation.Initialize and self.mainFrame then
+    self.Navigation:Initialize(self.mainFrame)
+  end
 end
 
 function UI:Refresh()
   if self.StepPanel and self.StepPanel.Update then
     self.StepPanel:Update()
+  end
+  if self.Navigation and self.Navigation.Update then
+    self.Navigation:Update()
   end
 end
 

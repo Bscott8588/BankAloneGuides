@@ -3,14 +3,14 @@ local Branding = BAG.Branding
 
 Branding.Layout = {
   frame = {
-    width = 360,
-    height = 420,
-    minWidth = 320,
-    minHeight = 360,
+    width = 300,
+    height = 340,
+    minWidth = 260,
+    minHeight = 300,
   },
   padding = 12,
   spacing = 6,
-  headerHeight = 32,
+  headerHeight = 30,
   stepLineHeight = 18,
   stepCount = 4,
 }

@@ -41,12 +41,8 @@ function Buttons:Initialize(parent)
   local options = CreateButton(frame, "Options", 80)
   options:SetPoint("RIGHT", frame, "RIGHT", 0, 0)
   options:SetScript("OnClick", function()
-    local settings = BAG.SavedVars:GetUISettings()
-    settings.locked = not settings.locked
-    if settings.locked then
-      DEFAULT_CHAT_FRAME:AddMessage("BAG: Frame locked.")
-    else
-      DEFAULT_CHAT_FRAME:AddMessage("BAG: Frame unlocked.")
+    if BAG.UI.Options and BAG.UI.Options.Toggle then
+      BAG.UI.Options:Toggle()
     end
   end)
 

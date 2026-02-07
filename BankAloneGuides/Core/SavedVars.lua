@@ -8,9 +8,11 @@ SavedVars.defaults = {
     relativePoint = "CENTER",
     x = 0,
     y = 0,
-    width = 360,
-    height = 420,
+    width = 300,
+    height = 340,
+    scale = 1.0,
     locked = false,
+    showArrow = true,
   },
   theme = {
     neon = true,
@@ -20,7 +22,7 @@ SavedVars.defaults = {
 
 function SavedVars:Initialize()
   BAG_SavedVars = BAG_SavedVars or {}
-  BAG_SavedVars.profile = BAG_SavedVars.profile or Utils:CopyTable(self.defaults)
+  BAG_SavedVars.profile = Utils:MergeTables(Utils:CopyTable(self.defaults), BAG_SavedVars.profile or {})
   BAG_SavedVars.chars = BAG_SavedVars.chars or {}
 
   local key = Utils:GetCharKey()

@@ -45,4 +45,6 @@ UI/UI_Core.lua
 UI/UI_MainFrame.lua
 UI/UI_StepPanel.lua
 UI/UI_Buttons.lua
+UI/UI_Options.lua
+UI/UI_Navigation.lua
 UI/UI_Animations.lua
