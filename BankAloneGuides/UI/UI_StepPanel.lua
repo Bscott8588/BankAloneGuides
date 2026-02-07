@@ -36,9 +36,14 @@ function StepPanel:Initialize(parent)
     line:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, -((i - 1) * (Layout.stepLineHeight + Layout.spacing)))
     line:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, -((i - 1) * (Layout.stepLineHeight + Layout.spacing)))
 
+    local bg = line:CreateTexture(nil, "BACKGROUND")
+    bg:SetAllPoints(line)
+    bg:SetColorTexture(0.04, 0.07, 0.11, 0.65)
+    line.bg = bg
+
     local icon = line:CreateTexture(nil, "ARTWORK")
-    icon:SetSize(16, 16)
-    icon:SetPoint("LEFT", line, "LEFT", 0, 0)
+    icon:SetSize(18, 18)
+    icon:SetPoint("LEFT", line, "LEFT", 2, 0)
     line.icon = icon
 
     local text = line:CreateFontString(nil, "OVERLAY")
@@ -97,6 +102,14 @@ function StepPanel:Update()
       local prefix = (i == 1) and ">> " or "   "
       line.text:SetText(prefix .. BAG.Utils:BuildStepText(step))
       line.tags:SetText(self:BuildTags(step))
+
+      if i == 1 then
+        line.bg:SetColorTexture(0.08, 0.2, 0.35, 0.9)
+        line.text:SetTextColor(Styles.colors.primary.r, Styles.colors.primary.g, Styles.colors.primary.b)
+      else
+        line.bg:SetColorTexture(0.04, 0.07, 0.11, 0.65)
+        line.text:SetTextColor(Styles.colors.text.r, Styles.colors.text.g, Styles.colors.text.b)
+      end
       line:Show()
     else
       line.text:SetText("")

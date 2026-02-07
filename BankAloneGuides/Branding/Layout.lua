@@ -11,6 +11,6 @@ Branding.Layout = {
   padding = 12,
   spacing = 6,
   headerHeight = 30,
-  stepLineHeight = 18,
+  stepLineHeight = 22,
   stepCount = 4,
 }

@@ -19,6 +19,7 @@ function MainFrame:Create()
   frame:SetSize(width, height)
   frame:SetPoint(settings.point or "CENTER", UIParent, settings.relativePoint or "CENTER", settings.x or 0, settings.y or 0)
   frame:SetScale(settings.scale or 1.0)
+  frame:SetFrameStrata("MEDIUM")
   frame:SetMovable(true)
   frame:SetResizable(true)
   frame:EnableMouse(true)
@@ -52,6 +53,12 @@ function MainFrame:Create()
   local titleBg = titleBar:CreateTexture(nil, "BACKGROUND")
   titleBg:SetAllPoints(titleBar)
   titleBg:SetColorTexture(Theme.colors.secondary.r, Theme.colors.secondary.g, Theme.colors.secondary.b, 0.95)
+
+  local accent = frame:CreateTexture(nil, "ARTWORK")
+  accent:SetHeight(2)
+  accent:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, -Layout.headerHeight)
+  accent:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, -Layout.headerHeight)
+  accent:SetColorTexture(Theme.colors.primary.r, Theme.colors.primary.g, Theme.colors.primary.b, 0.85)
 
   local logo = BAG.Branding:CreateLogo(titleBar)
   self.logo = logo
@@ -96,10 +103,25 @@ function MainFrame:Create()
     end
   end)
 
-  local content = CreateFrame("Frame", nil, frame)
-  content:SetPoint("TOPLEFT", frame, "TOPLEFT", Layout.padding, -Layout.headerHeight)
-  content:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -Layout.padding, Layout.padding)
+  local contentBg = CreateFrame("Frame", nil, frame, "BackdropTemplate")
+  contentBg:SetPoint("TOPLEFT", frame, "TOPLEFT", 6, -Layout.headerHeight - 6)
+  contentBg:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -6, 6)
+  contentBg:SetBackdrop({
+    bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
+    edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+    tile = true,
+    tileSize = 16,
+    edgeSize = 10,
+    insets = { left = 2, right = 2, top = 2, bottom = 2 },
+  })
+  contentBg:SetBackdropColor(0.04, 0.06, 0.1, 0.7)
+  contentBg:SetBackdropBorderColor(Theme.colors.secondary.r, Theme.colors.secondary.g, Theme.colors.secondary.b, 0.7)
+
+  local content = CreateFrame("Frame", nil, contentBg)
+  content:SetPoint("TOPLEFT", contentBg, "TOPLEFT", Layout.padding, -Layout.padding)
+  content:SetPoint("BOTTOMRIGHT", contentBg, "BOTTOMRIGHT", -Layout.padding, Layout.padding)
   frame.content = content
+  frame.contentBg = contentBg
 
   self.frame = frame
   return frame
