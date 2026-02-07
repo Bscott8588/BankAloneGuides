@@ -23,7 +23,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
   "$target = '%TARGET%';" ^
   "$sed = Get-Content -Raw '%SED_TEMPLATE%';" ^
   "$sed = $sed.Replace('__SOURCE_PATH__', $root).Replace('__TARGET_NAME__', $target);" ^
-  "Set-Content -NoNewline '%SED_OUT%' $sed;"
+  "[System.IO.File]::WriteAllText('%SED_OUT%', $sed, [System.Text.Encoding]::ASCII);"
 
 if not exist "%SED_OUT%" (
   echo [BAG] Failed to generate SED file.
