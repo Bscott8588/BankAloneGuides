@@ -1,0 +1,48 @@
+## Interface: 20504
+## Title: Bank Alone Guides
+## Notes: Premium SCS-branded leveling and profession guides for Burning Crusade Classic Anniversary.
+## Author: Bradley S. Scott
+## Version: 1.0
+## SavedVariables: BAG_SavedVars
+
+Core/Init.lua
+Core/Utils.lua
+Core/SavedVars.lua
+Core/Conditions.lua
+Core/Engine.lua
+Core/Events.lua
+
+Branding/Theme.lua
+Branding/Layout.lua
+Branding/Logo.lua
+
+API/PlayerAPI.lua
+API/QuestAPI.lua
+API/InventoryAPI.lua
+API/SpellAPI.lua
+API/MapAPI.lua
+
+Data/Zones.lua
+Data/NPCs.lua
+Data/Quests.lua
+Data/Items.lua
+Data/Trainers.lua
+Data/Vendors.lua
+
+Guides/Parser.lua
+Guides/Leveling/Alliance/Alliance_1_70.lua
+Guides/Leveling/Horde/Horde_1_70.lua
+Guides/Professions/Professions.lua
+Guides/Gold/Gold.lua
+
+Navigation/ZoneDetection.lua
+Navigation/QuestTracking.lua
+Navigation/Travel.lua
+Navigation/Navigator.lua
+
+UI/UI_Styles.lua
+UI/UI_Core.lua
+UI/UI_MainFrame.lua
+UI/UI_StepPanel.lua
+UI/UI_Buttons.lua
+UI/UI_Animations.lua

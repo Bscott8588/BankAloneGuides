@@ -1,0 +1,22 @@
+local BAG = BankAlone
+BAG.Data.NPCs = {
+  [197] = { name = "Marshal McBride", zone = "Elwynn Forest", x = 48.2, y = 42.9, type = "questgiver", note = "Northshire command mentor." },
+  [823] = { name = "Deputy Willem", zone = "Elwynn Forest", x = 48.9, y = 41.6, type = "questgiver", note = "Keeps the valley organized." },
+  [375] = { name = "Priestess Anetta", zone = "Elwynn Forest", x = 49.8, y = 39.5, type = "trainer", note = "Spiritual trainer for starters." },
+  [658] = { name = "Sten Stoutarm", zone = "Dun Morogh", x = 29.9, y = 71.9, type = "questgiver", note = "Front gate watch." },
+  [786] = { name = "Grelin Whitebeard", zone = "Dun Morogh", x = 26.8, y = 74.9, type = "questgiver", note = "Cold ridge guide." },
+  [2079] = { name = "Ilthalaine", zone = "Teldrassil", x = 58.6, y = 44.9, type = "questgiver", note = "Starter scout for the grove." },
+  [2082] = { name = "Gilshalan Windwalker", zone = "Teldrassil", x = 57.8, y = 41.7, type = "questgiver", note = "Forest runner and local advisor." },
+  [17554] = { name = "Mekeda", zone = "Azuremyst Isle", x = 48.4, y = 50.3, type = "questgiver", note = "Crash site coordinator." },
+  [3143] = { name = "Gornek", zone = "Durotar", x = 42.1, y = 68.2, type = "questgiver", note = "Trainer of fresh recruits." },
+  [3057] = { name = "Cairne Bloodhoof", zone = "Mulgore", x = 62.6, y = 80.7, type = "leader", note = "Tauren leader and quest hub." },
+  [1569] = { name = "Shadow Priest Sarvis", zone = "Tirisfal Glades", x = 65.5, y = 39.0, type = "questgiver", note = "Undead mentor." },
+  [15278] = { name = "Magister Erona", zone = "Eversong Woods", x = 48.0, y = 46.0, type = "questgiver", note = "Beginner mage guide." },
+  [931] = { name = "Ariena Stormfeather", zone = "Elwynn Forest", x = 47.6, y = 41.2, type = "flightmaster", note = "Stormwind flight marshal." },
+  [3518] = { name = "Thomas Miller", zone = "Elwynn Forest", x = 43.7, y = 65.5, type = "vendor", note = "General supplies and light weapons." },
+  [2835] = { name = "Cedric Prose", zone = "Stormwind City", x = 49.9, y = 87.4, type = "vendor", note = "Mage cloth and reagents." },
+  [2358] = { name = "Dalaran Summoner", zone = "Hillsbrad Foothills", x = 33.0, y = 45.0, type = "enemy", note = "Summoning disruptor for mid-level route." },
+  [18930] = { name = "Vlagga Freyfeather", zone = "Hellfire Peninsula", x = 27.8, y = 60.0, type = "flightmaster", note = "Horde flight contact." },
+  [18931] = { name = "Amish Wildhammer", zone = "Hellfire Peninsula", x = 54.6, y = 62.8, type = "flightmaster", note = "Alliance flight contact." },
+  [18937] = { name = "Amerun Leafshade", zone = "Zangarmarsh", x = 78.4, y = 63.0, type = "flightmaster", note = "Zangarmarsh aerial guide." },
+}
