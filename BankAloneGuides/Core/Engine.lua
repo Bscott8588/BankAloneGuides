@@ -3,6 +3,7 @@
     SCS / Bank Alone Guides
     
     Loads guides, tracks current step, auto-advances, and supports manual navigation.
+    Supports primary/secondary quest tracking for Zygor-style display.
 ]]
 
 local BAG = BankAlone
@@ -94,6 +95,84 @@ function Engine:GetStepRange(startIdx, count)
     return steps
 end
 
+-- ============================================================
+-- PRIMARY + SECONDARY QUEST SYSTEM
+-- Builds a Zygor-style display list:
+--   1) The current primary step (highlighted, with live objectives)
+--   2) Upcoming steps from the guide (next few)
+--   3) Secondary active quests the player has from the guide
+-- ============================================================
+
+function Engine:GetDisplayList()
+    local display = {}
+    if not self._currentGuide or not self._currentGuide.steps then return display end
+
+    local currentStep = self._currentGuide.steps[self._currentStep]
+
+    -- 1) PRIMARY: The current step (always first, marked as primary)
+    if currentStep then
+        display[#display + 1] = {
+            index = self._currentStep,
+            data = currentStep,
+            role = "primary",       -- primary = top highlighted step
+            isCurrent = true,
+            isComplete = BAG.Conditions:IsComplete(currentStep),
+        }
+    end
+
+    -- 2) Look ahead for the next few upcoming steps (non-quest or sequential tasks)
+    local upcomingCount = 0
+    local maxUpcoming = 4
+    for i = self._currentStep + 1, math.min(self._currentStep + 15, self._totalSteps) do
+        if upcomingCount >= maxUpcoming then break end
+        local step = self._currentGuide.steps[i]
+        if step and BAG.Conditions:Check(step) then
+            -- Don't show already-completed steps
+            if not BAG.SavedVars:IsStepComplete(self._currentGuideName, i) then
+                display[#display + 1] = {
+                    index = i,
+                    data = step,
+                    role = "upcoming",
+                    isCurrent = false,
+                    isComplete = BAG.Conditions:IsComplete(step),
+                }
+                upcomingCount = upcomingCount + 1
+            end
+        end
+    end
+
+    -- 3) SECONDARY: Scan the guide for other active quests the player has accepted
+    --    that are NOT the current step's quest. These are "bonus" tasks.
+    local primaryQuestID = currentStep and currentStep.questID or nil
+    local secondaryAdded = {}  -- avoid duplicates
+
+    for i = 1, self._totalSteps do
+        if i ~= self._currentStep then
+            local step = self._currentGuide.steps[i]
+            if step and step.questID and step.questID ~= primaryQuestID then
+                -- Only show quests that are actually in the player's log
+                if BAG.API.Quest:IsActive(step.questID) and not secondaryAdded[step.questID] then
+                    -- Only show kill/complete/collect steps (not accept/turnin for secondary)
+                    if step.type == "kill" or step.type == "complete" or step.type == "collect" then
+                        if not BAG.API.Quest:IsComplete(step.questID) then
+                            secondaryAdded[step.questID] = true
+                            display[#display + 1] = {
+                                index = i,
+                                data = step,
+                                role = "secondary",
+                                isCurrent = false,
+                                isComplete = BAG.API.Quest:IsComplete(step.questID),
+                            }
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    return display
+end
+
 -- Set current step directly
 function Engine:SetStep(index)
     if not self._currentGuide then return end
@@ -174,17 +253,37 @@ function Engine:SkipInvalidSteps()
 end
 
 -- Auto-advance check (called by events)
+-- Now chains: if the current step completes, immediately check the next one too
 function Engine:TryAutoAdvance()
     if not self._autoAdvance then return end
     if not self._currentGuide then return end
 
-    local step = self:GetCurrentStep()
-    if not step then return end
+    local maxChain = 10  -- prevent runaway
+    for _ = 1, maxChain do
+        local step = self:GetCurrentStep()
+        if not step then return end
 
-    if BAG.Conditions:IsComplete(step) then
-        BAG:Debug("Auto-advancing from step", self._currentStep)
-        self:NextStep()
+        if BAG.Conditions:IsComplete(step) then
+            BAG:Debug("Auto-advancing from step", self._currentStep)
+
+            -- Mark complete and advance
+            BAG.SavedVars:MarkStepComplete(self._currentGuideName, self._currentStep)
+
+            if self._currentStep >= self._totalSteps then
+                self:OnGuideComplete()
+                return
+            end
+
+            self._currentStep = self._currentStep + 1
+            self:SkipInvalidSteps()
+            BAG.SavedVars:SaveProgress(self._currentGuideName, self._currentStep)
+        else
+            break  -- current step not complete, stop chaining
+        end
     end
+
+    -- Single UI refresh after all chaining
+    BAG.UI:RefreshStep()
 end
 
 -- Re-evaluate current step (user-triggered)
