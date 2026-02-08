@@ -24,6 +24,10 @@ function UI:Initialize()
     -- Create main frame
     BAG.UI.MainFrame:Create()
 
+    -- Create waypoint arrow (frameless floating arrow)
+    BAG.UI.WaypointArrow:Create()
+    BAG.UI.WaypointArrow:RestorePosition()
+
     -- Restore saved position/size
     self:RestorePosition()
 
@@ -39,16 +43,18 @@ function UI:Initialize()
     BAG:Debug("UI initialized")
 end
 
--- Show the main frame
+-- Show the main frame and waypoint arrow
 function UI:Show()
     if self._mainFrame then
         self._mainFrame:Show()
         self._visible = true
         BAG.UI.Animations:FadeIn(self._mainFrame, 0.2)
     end
+    -- Also show the waypoint arrow
+    BAG.UI.WaypointArrow:Refresh()
 end
 
--- Hide the main frame
+-- Hide the main frame and waypoint arrow
 function UI:Hide()
     if self._mainFrame then
         BAG.UI.Animations:FadeOut(self._mainFrame, 0.2, function()
@@ -58,6 +64,7 @@ function UI:Hide()
         end)
         self._visible = false
     end
+    BAG.UI.WaypointArrow:Hide()
 end
 
 -- Toggle visibility
@@ -75,6 +82,7 @@ function UI:RefreshGuide()
     BAG.UI.StepPanel:Refresh()
     self:UpdateProgressBar()
     self:UpdateTitleText()
+    BAG.UI.WaypointArrow:Refresh()
 end
 
 -- Refresh only the current step display
@@ -82,6 +90,7 @@ function UI:RefreshStep()
     if not self._initialized then return end
     BAG.UI.StepPanel:Refresh()
     self:UpdateProgressBar()
+    BAG.UI.WaypointArrow:Refresh()
 end
 
 -- Show guide complete message

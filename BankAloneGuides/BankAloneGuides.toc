@@ -57,6 +57,7 @@ Branding\Logo.lua
 # ============================================================
 UI\UI_Styles.lua
 UI\UI_Animations.lua
+UI\UI_WaypointArrow.lua
 UI\UI_Core.lua
 UI\UI_MainFrame.lua
 UI\UI_StepPanel.lua
